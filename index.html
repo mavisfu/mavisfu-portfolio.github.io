@@ -39,6 +39,7 @@
 
         h1, h2, h3 {
             padding-left: 100px;
+            margin-bottom: 40px;
         }
 
         h1 {
@@ -49,7 +50,7 @@
         h2 {
             color: #007BFF;
             font-weight: bold;
-            font-size: 25px;
+            font-size: 30px;
         }
         h3 {
             color: #007BFF;
@@ -109,9 +110,9 @@
         .img {
             text-align: center;
             display: flex;
+            flex-wrap: wrap; /* Enable wrapping for flex items */
             justify-content: center; /* or use 'space-between' for maximum space between images */
-            margin-left: 20px;
-            margin-right: 20px;
+            margin: 0; /* Set margin to 0 to eliminate spacing between images */
         }
 
         .img a {
@@ -120,24 +121,38 @@
         }
 
         .img-button {
-            width: 300px; 
-            height: 300px; 
+            max-width: 350px; 
+            max-height: 350px; 
+            min-width: 100px;
+            min-height: 100px;
             position: relative; 
             overflow: hidden; 
             text-align: center;
             margin: 0; /* Add margin for spacing between images */
         }
 
+        .img-button:hover {
+            filter: brightness(80%);
+            transition: filter 0.3s ease-in-out;
+            transform: scale(0.9); /* Scale down to 90% on hover */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+        }
+
         .img-button-text {
             position: absolute; 
             z-index: 2; 
+            margin-top: 0px;
             top: 50%; 
             left: 50%; 
             transform: translate(-50%, -50%);
             color: black;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+            font-size: 23px;
+            line-height: 1.5;
         }
+
+        
 
         .text{
             padding-left: 100px;
@@ -194,6 +209,24 @@
                     <div style="opacity: 0.5;">
                         <img src="pics/wf223.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
+                    <p class="img-button-text">Baby Safe System on ESP32</p>
+                </a>
+            </div>
+            <div class="img-button">
+                <a href="https://ece4760.github.io/Projects/Fall2023/wf223_hw768/index.html#">
+                    <div style="opacity: 0.5;">
+                        <img src="pics/wf223.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <p class="img-button-text">Remote-controlled Robot with Electromagnet on Pico W</p>
+                </a>
+            </div>
+        </div>
+        <div class="img">
+            <div class="img-button">
+                <a href="https://www.example.com">
+                    <div style="opacity: 0.5;">
+                        <img src="pics/wf223.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
                     <p class="img-button-text">Baby Safe System 1</p>
                 </a>
             </div>
@@ -207,7 +240,6 @@
             </div>
         </div>
     </div>
-    <h3><a href="lab1.html">Baby Safe System</a></h3>
 </section>
 
 
