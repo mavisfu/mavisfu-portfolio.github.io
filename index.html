@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wenyi Fu</title>
+    <title>Wenyi Fu Portfolio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
             background-color: #f4f4f4;
             color: #333;
             margin: 0;
@@ -30,11 +30,15 @@
         }
 
         section {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 30px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            padding-left: 100px;
         }
 
         h1 {
@@ -81,6 +85,14 @@
             text-align: center;
         }
 
+        nav.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
         nav a {
             display: inline-block;
             color: white;
@@ -92,6 +104,54 @@
         nav a:hover {
             background-color: #ddd;
             color: black;
+        }
+
+        .img {
+            text-align: center;
+            display: flex;
+            justify-content: center; /* or use 'space-between' for maximum space between images */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .img a {
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .img-button {
+            width: 300px; 
+            height: 300px; 
+            position: relative; 
+            overflow: hidden; 
+            text-align: center;
+            margin: 0; /* Add margin for spacing between images */
+        }
+
+        .img-button-text {
+            position: absolute; 
+            z-index: 2; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            color: black;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .text{
+            padding-left: 100px;
+        }
+
+        p a {
+            text-decoration: none;
+            color: black;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        p a:hover {
+            color: #007BFF;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
     </style>
@@ -120,25 +180,65 @@
             <p>My name is Wenyi Fu and I am a ECE M.Eng. student at Cornell University. </p>
             <p>Welcome to my personal webpage!!!</p>
         </div>
+       
+             
+      
     </section>
 
     <section id="projects">
-        <h2>PROJECTS</h2>
-        <div class="projects">
-            <h3><a href="lab1.html">Lab 1: Artemis</a></h3>
+    <h2>PROJECTS</h2>
+    <div class="projects">
+        <div class="img">
+            <div class="img-button">
+                <a href="https://www.example.com">
+                    <div style="opacity: 0.5;">
+                        <img src="pics/wf223.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <p class="img-button-text">Baby Safe System 1</p>
+                </a>
+            </div>
+            <div class="img-button">
+                <a href="https://www.example.com">
+                    <div style="opacity: 0.5;">
+                        <img src="pics/wf223.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <p class="img-button-text">Baby Safe System 2</p>
+                </a>
+            </div>
         </div>
-    </section>
+    </div>
+    <h3><a href="lab1.html">Baby Safe System</a></h3>
+</section>
+
 
     <section id="contact">
-        <h2>CONTACT</h2>
-        <p>Email: wf223@cornell.edu</p>
-        <p>LinkedIn: [Your LinkedIn Profile]</p>
-        <p>GitHub: [Your GitHub Profile]</p>
+            <h2>CONTACT</h2>
+            <div class="text">
+                <p>Email: wf223@cornell.edu</p>
+                <p>LinkedIn: <a href="http://linkedin.com/in/wenyi-fu-b326442ab">Wenyi Fu</a></p>
+                <p>GitHub: [Your GitHub Profile]</p>
+            </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Wenyi Fu Portfolio - Electrical & Computer Engineering</p>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            var rect = nav.getBoundingClientRect();
+
+            if (rect.top <= 0) {
+                nav.classList.add('fixed');
+            } else {
+                nav.classList.remove('fixed');
+            }
+            if (window.scrollY <= 200) {
+            nav.classList.remove('fixed');
+        }
+        });
+    </script>
 
 </body>
 </html>
